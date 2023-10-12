@@ -1,14 +1,15 @@
-package ru.sibur.weather
+package ru.sibur.weather.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.viewModels
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
+import ru.sibur.weather.R
 
 @AndroidEntryPoint
-class MainActivity : ComponentActivity() {
+internal class MainActivity : ComponentActivity() {
+
+    private val viewModel: MainScreenViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
