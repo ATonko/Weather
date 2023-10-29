@@ -7,31 +7,33 @@
     tools:context=".ui.MainActivity">
 
     <TextView
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/tvPlaceName"
         android:layout_width="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/title_city_background"
-        android:textSize="@dimen/main_text_size"
-        android:text="Karaganda"
-        android:textColor="@color/black"
         android:fontFamily="@font/lexend_black"
         android:gravity="center|center_horizontal"
-        android:layout_height="wrap_content"/>
+        android:textColor="@color/black"
+        android:textSize="@dimen/main_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Karaganda" />
 
     <TextView
-        android:text="24\u2103"
-        android:fontFamily="@font/lexend_black"
-        android:textSize="@dimen/main_text_size"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/tvTemperature"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend_black"
+        tools:text="24\u2103"
+        android:textColor="@color/white"
+        android:textSize="@dimen/main_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

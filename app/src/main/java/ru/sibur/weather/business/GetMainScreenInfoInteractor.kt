@@ -7,6 +7,6 @@ import ru.sibur.weather.ui.models.WeatherConditions
 internal interface GetMainScreenInfoInteractor {
     fun getLastPlaceNameToShow(): Single<PlaceName>
     fun getPlaceToShowBy(placeName: String): Single<PlaceName>
-    fun getCurrentPlaceWeatherConditions(): Single<WeatherConditions>
+    fun getLastPlaceWeatherConditions(): Single<WeatherConditions>
     fun getWeatherConditionsBy(placeName: String): Single<WeatherConditions>
 }

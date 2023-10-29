@@ -1,3 +1,3 @@
 package ru.sibur.weather.repository.model
 
-internal data class WeatherConditionsResponse(val temperature: String)
+internal data class WeatherConditionsResponse(val temperatureInCelsius: String)

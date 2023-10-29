@@ -25,7 +25,7 @@ internal class GetMainScreenInfoInteractorImpl @Inject constructor(
                 mapPlaceResponseToPlaceName(it)
             }
 
-    override fun getCurrentPlaceWeatherConditions(): Single<WeatherConditions> =
+    override fun getLastPlaceWeatherConditions(): Single<WeatherConditions> =
         repository.getLastPlaceWeatherConditions()
             .map {
                 mapWeatherResponseToWeatherConditions(it)
@@ -36,7 +36,7 @@ internal class GetMainScreenInfoInteractorImpl @Inject constructor(
             .map { mapWeatherResponseToWeatherConditions(it) }
 
     private fun mapWeatherResponseToWeatherConditions(response: WeatherConditionsResponse): WeatherConditions =
-        WeatherConditions(response.temperature)
+        WeatherConditions(response.temperatureInCelsius.addCelsiusSign())
 
     private fun mapPlaceResponseToPlaceName(response: PlaceNameResponse): PlaceName =
         PlaceName(response.placeName)
@@ -44,3 +44,5 @@ internal class GetMainScreenInfoInteractorImpl @Inject constructor(
     private fun mapPlaceNameToPlaceRequest(placeName: String): PlaceNameRequest =
         PlaceNameRequest(placeName)
 }
+
+private fun String.addCelsiusSign(): String =this.plus("\u2103")
